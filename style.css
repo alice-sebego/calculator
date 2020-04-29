@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(10, 61, 97);
+}
+
+h1{
+    color: white;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: auto;
+    padding: 1.2em;
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    background-color:rgb(10, 61, 97); 
+    border: 3px double rgb(255, 255, 255);
+}
+
+.screen{
+    width: 100%;
+    height: 3em;
+    margin-bottom: 0.8em;
+    border-radius: 8px;
+    border: 0.1em inset rgb(255, 255, 255);
+    background-color: rgb(158, 201, 204);
+    text-align: right;
+}
+
+#line1, #line2, #line3, #line4, #line5, #line6{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+
+.item{
+    width: 20%;
+    height: 3.5em;
+    border-radius: 8px;
+    border: 0.1em inset rgb(255, 255, 255);
+    text-align: center;
+    margin: 0.1em;
+    padding-top: 1em;
+    position: relative;
+    background: linear-gradient(to bottom, rgb(255,255,255) 0%,rgb(230, 227, 227) 51%,rgb(246,246,246) 100%);
+}
+
+.item:hover{
+    border: 0.1em outset rgb(255, 255, 255);
+}
+
+
+.btn-equal{
+    align-items: flex-end;
+    /*display: inline-flex;
+    align-self: flex-end;
+    flex-direction: column;*/
+
+}
