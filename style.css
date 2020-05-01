@@ -4,16 +4,47 @@
 
 header {
     background-color: rgb(10, 61, 97);
+    /*padding: 1.5em;*/
+    /*margin-bottom: 1.5em;*/
+}
+
+#bg-header{
+    width: 100%;
+}
+
+#content-header{
+    position:absolute;
+    top:0px;
+    color:white;
+}
+
+section{
+    width: 85%;
+    margin: auto;
+    padding: 2em 1.5em;
 }
 
 h1{
-    color: white;
+    text-align: center;
+    padding: 2.5em;
+    text-shadow: rgb(104, 107, 107) 1px 1px;
 }
 
+h2{
+    color: rgb(10, 61, 97);
+    border-bottom: 1px dashed rgb(10, 61, 97);
+    padding-bottom: 0.5em;
+    text-align: center;
+    margin: 1.5em 0;
+}
 
 nav a{
     color: white;
     text-decoration: none;
+}
+
+nav a:hover, nav a:active, nav a:focus{
+    color : rgb(158, 201, 204);
 }
 
 .container{
@@ -21,7 +52,7 @@ nav a{
     font-size: 1.2em;
     margin: auto;
     padding: 1.2em;
-    width: 40%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     background-color:rgb(10, 61, 97); 
@@ -66,11 +97,3 @@ nav a{
     border: 0.1em outset rgb(255, 255, 255);
 }
 
-
-.btn-equal{
-    align-items: flex-end;
-    /*display: inline-flex;
-    align-self: flex-end;
-    flex-direction: column;*/
-
-}

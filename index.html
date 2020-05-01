@@ -10,29 +10,35 @@
 <body>
     <!-- Header + menu -->
     <header>
-        <h1>Que la force des maths soient avec nous</h1>
+        <!-- Adding a background video in the header -->
+        <video id="bg-header" src="blackboard-school-books-no-copyright.mp4" autoplay="true" loop="true" muted="true"></video>
+        <div id="content-header">
+            <h1>Que la force des maths soient avec nous</h1>
+        </div>
+        <!-- Navigation -->  
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" title="Calculatrice">Calculatrice</a>
+                    <a class="nav-link" href="#theoreme" title="Calculatrice">Calculatrice</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" title="Théorème de Pythagore">Théorème de Pythagore</a>
+                    <a class="nav-link" href="#pythagore" title="Théorème de Pythagore">Théorème de Pythagore</a>
                 </li>
             </ul>
         </nav>
     </header>
     <!-- Calculator -->
     <section id="calculator">
+        <h2 id="calcul">La Calculatrice</h2>
         <div class="container">
             
-            <div class="screen"></div>
+            <div class="screen">0</div>
 
             <div id="line1">
-                <div class="item">MRC</div>
-                <div class="item">M+</div>
-                <div class="item">M-</div>
-                <div class="item">√</div>
+                <div class="item show-memory">MRC</div>
+                <div class="item add-memory">M+</div>
+                <div class="item remove-memory">M-</div>
+                <div class="item racine">√</div>
             </div>
 
             <div id="line2">
@@ -73,6 +79,7 @@
     </section>
     <!-- Module for Pythagore -->
     <section id="pythagore">
+        <h2 id="theoreme">Théorème de Pythagore</h2>
 
     </section>
     <footer>
