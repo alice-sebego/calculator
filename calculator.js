@@ -222,11 +222,35 @@ function setEqual(){
 
     $equal.addEventListener('click', function(){
 
-        //const equal = $equal.textContent;
         $screen.textContent = eval($screen.textContent);
+        console.log(typeof $screen.textContent);
+
+        let result = $screen.textContent;
+        console.log(result);  
     })
 }
 setEqual();
+
+// I tryed reset for a click on numerator after a result but i'm blocked
+
+function resetAfterResult(){
+
+    var $numerators = document.getElementsByClassName("numerator");
+    let result = $screen.textContent;
+
+        for (let numerator = 0; numerator < $numerators.length; numerator++) {
+            let btnNumerator = $numerators[numerator];
+            console.log(btnNumerator);
+            btnNumerator.addEventListener('click', function(){
+                if(result !== "0"){
+                    resetWrite();
+                }
+            })
+        } 
+}
+
+resetAfterResult();
+
 
 /* --------------------------
 MISE EN OEUVRE DES FONCTIONS
@@ -256,3 +280,38 @@ resetWrite();
 function resetZero(){
     $screen.textContent = "";
 }
+
+
+// functions of calculator's memory
+
+const memory = [];
+console.log(memory);
+// m+
+function addMemory(){
+   $addMemory.addEventListener('click', function(){
+       memory.push($screen.textContent);
+       console.log(memory[0]);
+   }) 
+}
+
+addMemory();
+
+// m-
+
+function removeMemory(){
+    $removeMemory.addEventListener('click', function(){
+        memory.pop($screen.textContent);
+        console.log(memory[0]);
+    })
+}
+
+removeMemory();
+
+// mrc
+function showMemory(){
+    $showMemory.addEventListener('click', function(){
+        $screen.textContent = memory[0];
+    })
+}
+
+showMemory();
