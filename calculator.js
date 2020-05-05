@@ -238,19 +238,18 @@ function resetAfterResult(){
     var $numerators = document.getElementsByClassName("numerator");
     let result = $screen.textContent;
 
-        for (let numerator = 0; numerator < $numerators.length; numerator++) {
-            let btnNumerator = $numerators[numerator];
-            console.log(btnNumerator);
-            btnNumerator.addEventListener('click', function(){
-                if(result !== "0"){
-                    resetWrite();
-                }
-            })
-        } 
+    for (let numerator = 0; numerator < $numerators.length; numerator++) {
+        let btnNumerator = $numerators[numerator];
+        console.log(btnNumerator);
+        btnNumerator.addEventListener('click', function(){
+            if(result !== "0"){
+                return resetWrite();
+            }
+        })
+    } 
 }
 
 resetAfterResult();
-
 
 /* --------------------------
 MISE EN OEUVRE DES FONCTIONS
@@ -281,22 +280,31 @@ function resetZero(){
     $screen.textContent = "";
 }
 
-
-// functions of calculator's memory
+/*---------------------------------
+ Functions of calculator's memory
+--------------------------------- */
 
 const memory = [];
-console.log(memory);
-// m+
+
+// Function M+
 function addMemory(){
    $addMemory.addEventListener('click', function(){
+        //if(!$screen.textContent){
+        //   memory.splice(0,1, $screen.textContent);
+        //} 
        memory.push($screen.textContent);
-       console.log(memory[0]);
+       // Add a symbol M in the screen when a number is in the calculator's memory
+       const m = document.createElement('div');
+       m.setAttribute('id', 'm');
+       $screen.appendChild(m);
+       m.textContent = "M";
+       console.log(memory[0]); 
    }) 
 }
 
 addMemory();
 
-// m-
+// Function M-
 
 function removeMemory(){
     $removeMemory.addEventListener('click', function(){
@@ -307,7 +315,7 @@ function removeMemory(){
 
 removeMemory();
 
-// mrc
+// Function MRC
 function showMemory(){
     $showMemory.addEventListener('click', function(){
         $screen.textContent = memory[0];
