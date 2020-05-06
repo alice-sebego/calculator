@@ -15,7 +15,9 @@ $calcHypotenuse.addEventListener('click', function(e){
     const aCote = document.getElementById('a').value;
     const bCote = document.getElementById('b').value;
     lengthHypotenuse(aCote,bCote);
-    console.log(lengthHypotenuse(aCote,bCote));
+    const $resultHypothenuse = document.getElementById('result-hypothenuse');
+    $resultHypothenuse.textContent = lengthHypotenuse(aCote,bCote) + ' cm';
+    $resultHypothenuse.style.border = "1px dashed rgb(158, 201, 204)";
 })
 
 /**
@@ -35,5 +37,7 @@ $calcSegment.addEventListener('click', function(e){
     const hypotenuse = document.getElementById('c').value;
     const cote = document.getElementById('s').value;
     lenghtOtherSegment(cote, hypotenuse);
-    console.log(lenghtOtherSegment(cote, hypotenuse));
+    const $resultSegment = document.getElementById('result-segment');
+    $resultSegment.textContent = lenghtOtherSegment(cote, hypotenuse) + ' cm';
+    $resultSegment.style.border = "1px dashed rgb(158, 201, 204)";
 })
