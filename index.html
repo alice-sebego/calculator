@@ -80,6 +80,64 @@
     <!-- Module for Pythagore -->
     <section id="pythagore">
         <h2 id="theoreme">Théorème de Pythagore</h2>
+        
+        <blockquote cite="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Pythagore">Dans un triangle rectangle, le carré de la longueur de l'hypothénuse (opposé à l'angle droit) est égal à la somme des carrés des longueurs de 2 autres côtés</blockquote>
+        
+        <!-- Calcul of the hypotenuse -->
+        <h3>Je souhaite calculer la Longueur de l'hypothénuse</h3>
+        
+        <p>car je possède les longueurs en cm des 2 autres côtés de mon triangle</p>
+        
+        <form class="row">
+            <div class="form-group col">
+                <div class="input-group mb-3">
+                    <input type="number" step="0.1" min="0" class="form-control" id="a" placeholder="Longueur côté a" aria-label="Longueur côté a" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col">
+                <div class="input-group mb-3">
+                    <input type="number" step="0.1" min="0" class="form-control" id="b" placeholder="Longueur côté b" aria-label="Longueur côté b" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="#">
+                <button type="submit" class="btn btn-primary" id="calcHypotenuse" value="submit">Calculer</button>
+            </div>
+        </form>
+        <hr>
+        <!-- calcul for an other segment of triangle -->
+        <h3>Je souhaite calculer la Longueur d'un des autres côtés du triangle</h3>
+        
+        <p>car je possède la longueurs en cm de l'hypothénuse et celle d'un des 2 autres côtés de mon triangle</p>
+        
+        <form class="row">
+            <div class="form-group col">
+                <div class="input-group mb-3">
+                    <input type="number" step="0.1" min="0" class="form-control" id="c" placeholder="Longueur de hypothénuse" aria-label="Longueur de hypothénuse" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col">
+                <div class="input-group mb-3">
+                    <input type="number" step="0.1" min="0" class="form-control" id="s" placeholder="Longueur d'un côté" aria-label="Longueur d'un côté" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="#">
+                <button type="submit" class="btn btn-primary" id="calcSegment" value="submit">Calculer</button>
+            </div>
+        </form>
 
     </section>
     <footer>
@@ -91,5 +149,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!-- script calculator -->
     <script src="calculator.js"></script>
+    <!-- script pythagore -->
+    <script src="pythagore.js"></script>
 </body>
 </html>

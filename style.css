@@ -4,8 +4,6 @@
 
 header {
     background-color: rgb(10, 61, 97);
-    /*padding: 1.5em;*/
-    /*margin-bottom: 1.5em;*/
 }
 
 #bg-header{
@@ -16,6 +14,18 @@ header {
     position:absolute;
     top:0px;
     color:white;
+}
+
+.btn-primary, #basic-addon2{
+    background-color: rgb(10, 61, 97);
+    color: white;
+    border-color: rgb(10, 61, 97);
+}
+
+.btn-primary:hover, 
+.btn-primary:active, 
+.btn-primary:focus{
+    background-color: rgb(34, 101, 148);
 }
 
 section{
@@ -38,6 +48,14 @@ h2{
     margin: 1.5em 0;
 }
 
+h3{
+    color: rgb(10, 61, 97);
+    font-size: 1.5em;
+    padding-bottom: 0.2em;
+    text-align: center;
+    margin: 1.5em 0;
+}
+
 nav a{
     color: white;
     text-decoration: none;
@@ -46,6 +64,13 @@ nav a{
 nav a:hover, nav a:active, nav a:focus{
     color : rgb(158, 201, 204);
 }
+
+hr{
+    border: 0.1em solid rgb(158, 201, 204);
+    width: 50%;
+}
+
+/* Partie calculatrice */
 
 .container{
     font-weight: bold;
@@ -102,3 +127,11 @@ nav a:hover, nav a:active, nav a:focus{
     float: left;
 }
 
+/* Partie pythagore */
+
+blockquote{
+    padding: 1.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.8em;
+    background-color: rgb(158, 201, 204);
+}
