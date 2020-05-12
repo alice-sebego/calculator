@@ -150,3 +150,12 @@ blockquote{
     font-weight: bold;
     width: 30%;
 }
+
+#reset{
+    width: 30%;
+    margin: auto;
+}
+
+.effacer{
+     width: 100%;
+ }
