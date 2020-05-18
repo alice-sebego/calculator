@@ -159,3 +159,24 @@ blockquote{
 .effacer{
      width: 100%;
  }
+
+ /* footer */
+
+ footer{
+     padding: 1em 3em;
+     background-color: rgb(10, 61, 97);
+     color: white;
+     text-align: center;
+ }
+
+ footer a{
+     color: white;
+     text-decoration: underline;
+ }
+
+ footer a:hover, 
+ footer a:active, 
+ footer a:focus{
+     color: rgb(158, 201, 204);
+     text-decoration: none;
+ }
