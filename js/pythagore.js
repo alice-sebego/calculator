@@ -1,6 +1,6 @@
 import _ from 'lodash';
 /**
- * Calculate hypotenuse's lenght
+ * Calculate hypotenuse's length
  * @param {number} a 
  * @param {number} b 
  */
@@ -18,7 +18,7 @@ $calcHypotenuse.addEventListener('click', e => {
     lengthHypotenuse(aCote,bCote);
     
     const $resultHypothenuse = document.querySelector('#result-hypothenuse');
-    $resultHypothenuse.textContent = lengthHypotenuse(aCote,bCote) + ' cm';
+    $resultHypothenuse.textContent = Math.round(lengthHypotenuse(aCote,bCote) * 100) / 100  + ' cm';
     $resultHypothenuse.style.border = "1px dashed rgb(158, 201, 204)";
 });
 
@@ -41,6 +41,6 @@ $calcSegment.addEventListener('click', e => {
     lenghtOtherSegment(cote, hypotenuse);
     
     const $resultSegment = document.querySelector('#result-segment');
-    $resultSegment.textContent = lenghtOtherSegment(cote, hypotenuse) + ' cm';
+    $resultSegment.textContent = Math.round(lenghtOtherSegment(cote, hypotenuse) * 100) /100 + ' cm';
     $resultSegment.style.border = "1px dashed rgb(158, 201, 204)";
 });
