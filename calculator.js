@@ -6,6 +6,8 @@ ELEMENTS OF DOM
 const $numerators = document.querySelectorAll(".numerator");
 
 // Operators
+
+const $operators = document.querySelectorAll(".operator");
 const $division = document.querySelector(".division");
 const $multiplication = document.querySelector(".multiplication");
 const $substraction = document.querySelector(".substraction");
@@ -24,7 +26,7 @@ const $screen = document.querySelector(".screen");
 const $reset = document.querySelector(".reset");
 
 /* ---------------------------
-AFFICHAGE ECRAN DES NUMBERS
+NUMBERS DISPLAY ON THE SCREEN
 ----------------------------*/
 
 /**
@@ -50,78 +52,70 @@ const setNumber = (nb) => {
 
 }
 
-$numerators.forEach( numerator =>{
+$numerators.forEach( numerator => {
     setNumber(numerator);
 });
 
 
 /* ------------------------
-AFFICHAGE ECRAN OPERATORS
+OPERATORS DISPLAY ON THE SCREEN
 --------------------------*/
-function setMultiplication(){
 
-    $multiplication.addEventListener('click', function(){
+/**
+ * Display operator on the screen
+ * @param {HTMLElement} btn 
+ */
+const setOperator = (btn) => {
 
-        const fois = "*";
-        $screen.textContent += fois;
-    })
+    btn.addEventListener('click', () => {
+
+        let btnContent = btn.textContent;
+
+        switch (btnContent) {
+            case "X":
+                $screen.textContent += "*";
+                break;
+            case "÷":
+                $screen.textContent += "/";
+                break;
+            case "+":
+                $screen.textContent += "+";
+                break;
+            case "-":
+                $screen.textContent += "-";        
+            default:
+                console.log("error");
+                break;
+        }
+    });
 }
-setMultiplication();
 
-function setDivision(){
+$operators.forEach( operator => {
+    setOperator(operator); 
+});
 
-    $division.addEventListener('click', function(){
+// Calculate the result of operation 
+const setEqual = () => {
 
-        const divisor = "/";
-        $screen.textContent += divisor;
-    })
-}
-setDivision();
-
-function setAddition(){
-
-    $addition.addEventListener('click', function(){
-
-        const plus = $addition.textContent;
-        $screen.textContent += plus;
-    })
-}
-setAddition();
-
-function setSubstraction(){
-
-    $substraction.addEventListener('click', function(){
-
-        const moins = $substraction.textContent;
-        $screen.textContent += moins;
-    })
-}
-setSubstraction();
-
-
-function setEqual(){
-
-    $equal.addEventListener('click', function(){
+    $equal.addEventListener('click', () => {
 
         $screen.textContent = eval($screen.textContent);
-        console.log(typeof $screen.textContent);
-
-        let result = $screen.textContent;
-        console.log(result);  
-    })
+     
+    });
 }
+
 setEqual();
 
 // I tryed reset for a click on numerator after a result but i'm blocked
 
-function resetAfterResult(){
+const resetAfterResult = () => {
 
     let result = $screen.textContent;
 
     for (let numerator = 0; numerator < $numerators.length; numerator++) {
         let btnNumerator = $numerators[numerator];
         //console.log(btnNumerator);
-        btnNumerator.addEventListener('click', function(){
+        btnNumerator.addEventListener('click', () => {
             if(result !== "0"){
                 return resetWrite();
             }
@@ -137,17 +131,17 @@ MISE EN OEUVRE DES FONCTIONS
 
 // Racine carré
 
-function squareRoot(){
+const squareRoot = () => {
 
-    $racine.addEventListener('click', function(){
+    $racine.addEventListener('click', () => {
     $screen.textContent = Math.sqrt($screen.textContent);    
-    })
+    });
 }
 
 squareRoot();
 
 // Reset screen
-function resetWrite(){
+const resetWrite = () => {
 
     $reset.addEventListener('click', function(){
         $screen.textContent = "0";
@@ -156,7 +150,7 @@ function resetWrite(){
 resetWrite();
 
 // reset zero
-function resetZero(){
+const resetZero = () => {
     $screen.textContent = "";
 }
 
@@ -167,8 +161,8 @@ function resetZero(){
 const memory = [];
 
 // Function M+
-function addMemory(){
-   $addMemory.addEventListener('click', function(){
+const addMemory = () => {
+   $addMemory.addEventListener('click', () => {
         //if(!$screen.textContent){
         //   memory.splice(0,1, $screen.textContent);
         //} 
@@ -179,27 +173,27 @@ function addMemory(){
        $screen.appendChild(m);
        m.textContent = "M";
        console.log(memory[0]); 
-   }) 
+   }); 
 }
 
 addMemory();
 
 // Function M-
 
-function removeMemory(){
-    $removeMemory.addEventListener('click', function(){
+const removeMemory = () => {
+    $removeMemory.addEventListener('click', () =>{
         memory.pop($screen.textContent);
         console.log(memory[0]);
-    })
+    });
 }
 
 removeMemory();
 
 // Function MRC
-function showMemory(){
-    $showMemory.addEventListener('click', function(){
+const showMemory = () => {
+    $showMemory.addEventListener('click', () => {
         $screen.textContent = memory[0];
-    })
+    });
 }
 
 showMemory();
