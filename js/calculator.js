@@ -1,3 +1,4 @@
+import _ from 'lodash';
 /* ---------------------------
 ELEMENTS OF DOM
 ----------------------------*/
@@ -11,7 +12,6 @@ const $equal = document.querySelector(".btn-equal");
 
 // Operators of math's functions
 const $racine = document.querySelector(".racine");
-const $point = document.querySelector(".point");
 const $addMemory = document.querySelector(".add-memory");
 const $removeMemory = document.querySelector(".remove-memory");
 const $showMemory = document.querySelector(".show-memory");
@@ -40,7 +40,7 @@ const setNumber = (nb) => {
             $screen.textContent += numero;
 
         } else{
-            numero = +nb.textContent;
+            let numero = +nb.textContent;
             $screen.textContent += numero;
         }
     });

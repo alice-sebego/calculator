@@ -1,3 +1,4 @@
+import _ from 'lodash';
 /**
  * Calculate hypotenuse's lenght
  * @param {number} a 
