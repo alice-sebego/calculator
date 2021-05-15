@@ -6,12 +6,7 @@ ELEMENTS OF DOM
 const $numerators = document.querySelectorAll(".numerator");
 
 // Operators
-
 const $operators = document.querySelectorAll(".operator");
-const $division = document.querySelector(".division");
-const $multiplication = document.querySelector(".multiplication");
-const $substraction = document.querySelector(".substraction");
-const $addition = document.querySelector(".addition");
 const $equal = document.querySelector(".btn-equal");
 
 // Operators of math's functions
@@ -72,7 +67,7 @@ const setOperator = (btn) => {
         let btnContent = btn.textContent;
 
         switch (btnContent) {
-            case "X":
+            case "x":
                 $screen.textContent += "*";
                 break;
             case "÷":
@@ -82,7 +77,8 @@ const setOperator = (btn) => {
                 $screen.textContent += "+";
                 break;
             case "-":
-                $screen.textContent += "-";        
+                $screen.textContent += "-"; 
+                break;       
             default:
                 console.log("error");
                 break;
