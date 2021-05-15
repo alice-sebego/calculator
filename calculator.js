@@ -1,178 +1,59 @@
-var $division = document.querySelector(".division");
-var $multiplication = document.querySelector(".multiplication");
-var $substraction = document.querySelector(".substraction");
-var $addition = document.querySelector(".addition");
-var $equal = document.querySelector(".btn-equal");
+/* ---------------------------
+ELEMENTS OF DOM
+----------------------------*/
 
-var $racine = document.querySelector(".racine");
-var $point = document.querySelector(".point");
-var $addMemory = document.querySelector(".add-memory");
-var $removeMemory = document.querySelector(".remove-memory");
-var $showMemory = document.querySelector(".show-memory");
+// Numbers and point
+const $numerators = document.querySelectorAll(".numerator");
 
-var $seven = document.querySelector(".seven");
-var $eight = document.querySelector(".eight");
-var $nine = document.querySelector(".nine");
-var $four = document.querySelector(".four");
-var $five = document.querySelector(".five");
-var $six = document.querySelector(".six");
-var $three = document.querySelector(".three");
-var $two = document.querySelector(".two");
-var $one = document.querySelector(".one");
-var $zero = document.querySelector(".btn-zero");
+// Operators
+const $division = document.querySelector(".division");
+const $multiplication = document.querySelector(".multiplication");
+const $substraction = document.querySelector(".substraction");
+const $addition = document.querySelector(".addition");
+const $equal = document.querySelector(".btn-equal");
 
-var $screen = document.querySelector(".screen");
+// Operators of math's functions
+const $racine = document.querySelector(".racine");
+const $point = document.querySelector(".point");
+const $addMemory = document.querySelector(".add-memory");
+const $removeMemory = document.querySelector(".remove-memory");
+const $showMemory = document.querySelector(".show-memory");
 
-var $reset = document.querySelector(".reset");
-
+// Handle displaying results
+const $screen = document.querySelector(".screen");
+const $reset = document.querySelector(".reset");
 
 /* ---------------------------
 AFFICHAGE ECRAN DES NUMBERS
 ----------------------------*/
 
-// Ecrire Sept
-function setSeven(){
+/**
+ * Set text content of elements
+ * @param {HTMLElement} nb 
+ */
+const setNumber = (nb) => {
 
-    $seven.addEventListener('click', function(e){
-        if($screen.textContent == "0"){
-            resetZero()
-        } 
-        const numerator7 = +$seven.textContent;
-        $screen.textContent += numerator7;
-
-    })
-
-}
-setSeven();
-
-// Ecrire Huit
-function setEight(){
-
-    $eight.addEventListener('click', function(){
+    nb.addEventListener('click', function(){
         if($screen.textContent == "0"){
             resetZero()
         }
-        const numerator8 = +$eight.textContent;
-        $screen.textContent += numerator8;
-    })
-}
-setEight();
 
-// Ecrire Neuf
-function setNine(){
+        if(nb.textContent === "."){
+            let numero = nb.textContent;
+            $screen.textContent += numero;
 
-    $nine.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
+        } else{
+            numero = +nb.textContent;
+            $screen.textContent += numero;
         }
-        const numerator9 = +$nine.textContent;
-        $screen.textContent += numerator9;
-    })
-}
-setNine();
- 
-// Ecrire Quatre
-function setFour(){
+    });
 
-    $four.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
-        }
-        const numerator4 = +$four.textContent;
-        $screen.textContent += numerator4;
-    })
-}
-setFour();
-
-// Ecrire Cinq
-function setFive(){
-
-    $five.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
-        }
-        const numerator5 = +$five.textContent;
-        $screen.textContent += numerator5;
-    })
-}
-setFive();
-
-// Ecrire six
-function setSix(){
-
-    $six.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
-        }
-        const numerator6 = +$six.textContent;
-        $screen.textContent += numerator6;
-    })
-}
-setSix();
-
-// Ecrire un
-function setOne(){
-
-    $one.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
-        }
-        const numerator1 = +$one.textContent;
-        $screen.textContent += numerator1;
-    })
-}
-setOne();
-
-// Ecrire Deux
-function setTwo(){
-
-    $two.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
-        }
-        const numerator2 = +$two.textContent;
-        $screen.textContent += numerator2;
-    })
-}
-setTwo();
-
-// Ecrire Trois
-function setThree(){
-
-    $three.addEventListener('click', function(){
-        if($screen.textContent == "0"){
-            resetZero()
-        }
-        const numerator3 = +$three.textContent;
-        $screen.textContent += numerator3;
-    })
-}
-setThree();
-
-// Ecrire zéro
-function setZero(){
-
-    $zero.addEventListener('click', function(){
-        
-        const numerator0 = +$zero.textContent;
-        $screen.textContent += numerator0;
-
-    })
-}
-setZero();
-
-// Ecrire point
-
-function setPoint(){
-    $point.addEventListener('click', function(){
-       
-        const point = $point.textContent;
-        $screen.textContent += point;
-
-    })
 }
 
-setPoint();
+$numerators.forEach( numerator =>{
+    setNumber(numerator);
+});
+
 
 /* ------------------------
 AFFICHAGE ECRAN OPERATORS
@@ -235,12 +116,11 @@ setEqual();
 
 function resetAfterResult(){
 
-    var $numerators = document.getElementsByClassName("numerator");
     let result = $screen.textContent;
 
     for (let numerator = 0; numerator < $numerators.length; numerator++) {
         let btnNumerator = $numerators[numerator];
-        console.log(btnNumerator);
+        //console.log(btnNumerator);
         btnNumerator.addEventListener('click', function(){
             if(result !== "0"){
                 return resetWrite();
