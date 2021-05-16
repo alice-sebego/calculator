@@ -143,6 +143,24 @@ blockquote{
     line-height: 1.9em;
 }
 
+blockquote::before,
+blockquote::after{
+    font-family: FontAwesome;
+    position: absolute;
+    color: rgb(10, 61, 97);
+    font-size: 4vw;
+}
+
+blockquote::before{
+    content: "\f10d";
+    left: 2em;
+}
+
+blockquote::after{
+    content: "\f10e";
+    right: 2em;
+}
+
 .result{
     font-weight: bold;
 }
@@ -197,6 +215,23 @@ footer a:focus{
 
 /* responsive handle */
 
+@media screen and (min-width: 1200px){
+    section{
+        width: 65%;
+    }
+
+    blockquote::before{
+        content: "\f10d";
+        left: 4em;
+    }
+    
+    blockquote::after{
+        content: "\f10e";
+        right: 4em;
+    }
+    
+}
+
 @media screen and (max-width:700px) {
 
     .container{
@@ -230,6 +265,19 @@ footer a:focus{
 
     #content-header{
         padding: 8vh;
+    }
+
+    blockquote::before,
+    blockquote::after{
+        font-size: 4.5vw;
+    }
+
+    blockquote::before{
+        left: 1em;
+    }
+    
+    blockquote::after{
+        right: 1em;
     }
      
 }
