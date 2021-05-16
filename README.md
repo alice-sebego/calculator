@@ -2,11 +2,13 @@
 
 Confinement lié à la crise sanitaire + Mise en chômage partiel total + Mon rôle improvisé de prof de math auprès de mon fils = 
 Reprise d'un exo fait pendant ma formation de dév.
+
 Objectif : conserver et approfondir mes skills auxquels je tiens !
 
 ## C'est quoi ?
 
-Il s'agit d'une page web dédiée aux maths :
+Il s'agit d'une page web dédiée aux maths.
+
 Elle contiendra une calculatrice faite en JS + un module pour réviser le théorème de Pythagore :)
 
 ## Langages, framework et outils utilisés :
